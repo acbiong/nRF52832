@@ -1,0 +1,109 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="GPIO_TEST" target="8" version="2">
+  <project Name="GPIO_TEST">
+    <configuration
+      Name="Common"
+      Placement="Flash"
+      Target="nRF52832_xxAA"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_interwork="No"
+      arm_linker_heap_size="8192"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="8192"
+      arm_simulator_memory_simulation_parameter="RWX 00000000,00100000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_device_name="nRF52832_xxAA"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="BOARD_PCA10040 ;BSP_DEFINES_ONLY;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74"
+      c_user_include_directories="$(ProjectDir)/inc;$(ProjectDir)/../../Driverlib;$(ProjectDir)/../../Driverlib/drivers;$(ProjectDir)/../../Driverlib/drivers/include;$(ProjectDir)/../../Driverlib/drivers/src/prs;$(ProjectDir)/../../Driverlib/hal;$(ProjectDir)/../../Driverlib/legacy;$(ProjectDir)/../../Driverlib/mdk;$(ProjectDir)/../../Driverlib/soc;$(ProjectDir)/../../Driverlib/templates;$(ProjectDir)/../../Driverlib/templates/nRF52832;$(ProjectDir)/../../Middleware/components/drivers_nrf/nrf_soc_nosd;$(ProjectDir)/../../Middleware/components/libraries/balloc;$(ProjectDir)/../../Middleware/components/libraries/bsp;$(ProjectDir)/../../Middleware/components/experimental_log;$(ProjectDir)/../../Middleware/components/experimental_log/src;$(ProjectDir)/../../Middleware/components/experimental_memobj;$(ProjectDir)/../../Middleware/components/strerror;$(ProjectDir)/../../Middleware/components/libraries/util;$(ProjectDir)/../../Middleware/components/toolchain/cmsis/include;$(ProjectDir)/../../TargetBoards/PCA10040"
+      debug_register_definition_file="$(ProjectDir)/../../Driverlib/mdk/nrf52.svd"
+      debug_target_connection="J-Link"
+      gcc_entry_point="Reset_Handler"
+      linker_memory_map_file=""
+      linker_output_format="hex"
+      linker_printf_fp_enabled="No"
+      linker_section_placement_file="$(ProjectDir)/../../TargetBoards/PCA10040/flash_placement.xml"
+      linker_section_placement_macros="FLASH_PH_START=0x0 ;FLASH_PH_SIZE=0x80000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x10000;FLASH_START=0x0;FLASH_SIZE=0x80000;RAM_START=0x20000000;RAM_SIZE=0x10000"
+      linker_section_placements_segments="FLASH RX 0x0 0x80000 ;RAM RWX 0x20000000 0x10000"
+      macros="CMSIS_CONFIG_TOOL=$(PackagesDir)/../../Utilities/cmsisconfig/CMSIS_Configuration_Wizard.jar"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="TargetInterface.resetAndStop()"
+      target_script_file="$(ProjectDir)/nRF_Target.js"
+      target_trace_initialize_script="" />
+    <folder Name="CMSIS Files">
+      <file file_name="../../Driverlib/mdk/system_nrf52.c" />
+      <file file_name="../../Driverlib/mdk/ses_nRF_Startup.s" />
+      <file file_name="../../Driverlib/mdk/ses_nrf52_Vectors.s" />
+    </folder>
+    <folder Name="Script Files" />
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="src/main.c" />
+    </folder>
+    <folder Name="System Files">
+      <file file_name="../../TargetBoards/PCA10040/thumb_crt0.s" />
+    </folder>
+    <configuration
+      Name="Debug"
+      debug_register_definition_file="$(ProjectDir)/../../Driverlib/mdk/nrf52.svd"
+      gcc_optimization_level="Optimize For Size"
+      linker_memory_map_file="" />
+  </project>
+  <configuration
+    Name="Debug"
+    arm_architecture="v4T"
+    arm_core_type="None"
+    arm_fp_abi="Soft"
+    arm_fpu_type="None"
+    arm_linker_treat_warnings_as_errors="Yes"
+    arm_target_interface_type="JTAG"
+    c_preprocessor_definitions="NDEBUG"
+    debug_register_definition_file=""
+    debug_start_from_entry_point_symbol="Yes"
+    debug_target_connection="Simulator"
+    gcc_debugging_level="Level 2"
+    gcc_entry_point="reset_handler"
+    gcc_optimization_level="None"
+    linker_output_format="None"
+    linker_printf_fmt_level="int"
+    linker_printf_width_precision_supported="No"
+    linker_section_placement_file="$(StudioDir)/targets/section_placement.xml" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 1" />
+  <configuration
+    Name="Common"
+    arm_architecture="v7EM"
+    arm_core_type="Cortex-M4"
+    arm_endian="Little"
+    arm_fp_abi="Hard"
+    arm_fpu_type="FPv4-SP-D16"
+    arm_linker_heap_size="1024"
+    arm_linker_stack_size="1024"
+    arm_linker_treat_warnings_as_errors="No"
+    arm_simulator_memory_simulation_parameter="RX 00000000,00080000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+    arm_target_device_name="nRF52832_xxAA"
+    arm_target_interface_type="SWD"
+    c_preprocessor_definitions="NDEBUG"
+    debug_register_definition_file="$(ProjectDir)/../../Driverlib/mdk/nrf52.svd"
+    debug_start_from_entry_point_symbol="No"
+    debug_target_connection="J-Link"
+    gcc_debugging_level="Level 3"
+    gcc_entry_point="Reset_Handler"
+    gcc_optimization_level="Optimize For Size"
+    linker_output_format="hex"
+    linker_printf_fmt_level="long"
+    linker_printf_width_precision_supported="Yes"
+    linker_section_placement_file="$(ProjectDir)/../../TargetBoards/PCA10040/flash_placement.xml"
+    linker_section_placement_macros="FLASH_PH_START=0x0 ;FLASH_PH_SIZE=0x80000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x10000;FLASH_START=0x0;FLASH_SIZE=0x80000;RAM_START=0x20000000;RAM_SIZE=0x10000"
+    linker_section_placements_segments="FLASH RX 0x0 0x80000 ;RAM RWX 0x20000000 0x10000"
+    macros="CMSIS_CONFIG_TOOL=$(ProjectDir)/../../Utilities/cmsisconfig/CMSIS_Configuration_Wizard.jar" />
+</solution>
